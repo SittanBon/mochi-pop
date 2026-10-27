@@ -1,90 +1,83 @@
-# Mochi Pop 🍡 — version 1
+# Mochi Pop 🍡
 
-แอพกดป๊อปมอจิคลายเครียด พร้อมมอจิสัตว์เลี้ยงที่โตขึ้นได้
-สร้างด้วย Expo (React Native) ใช้ได้ทั้ง iPhone และ Android
+A stress-relief tapping app with a mochi pet that grows up with you.
+Pop the mochi, feel your phone buzz, and look after your own little mochi: feed it, walk it, and collect silly new looks.
 
-## มีอะไรในเวอร์ชันนี้
+Built with [Expo](https://expo.dev) (React Native), so it runs on both iPhone and Android.
 
-- **กดป๊อป** มือถือสั่นทุกครั้ง มีเสียง คอมโบ และโหมด Rage ใช้ได้หลายนิ้วพร้อมกัน
-- **ตั้งชื่อมอจิ** ตอนเปิดแอพครั้งแรก เปลี่ยนชื่อได้ทุกเมื่อ (กด ✏️)
-- **มอจิโตขึ้น** Baby → Kid → Teen → Adult → Grand ได้ XP จากการป๊อป ให้อาหาร พาเดิน และลูบหัว
-- **ออร่า** 6 ระดับตามจำนวนป๊อปทั้งหมด (Soft Glow → Cosmic)
-- **ลูกอม 🍬** ได้จากการป๊อป หีบลูกอม การเดิน และการลูบหัว
-- **ดูแลมอจิ** ให้อาหาร (มื้อหลัก + เครื่องดื่มพลังงาน) พาเดินจริงด้วยตัวนับก้าว หรือเดินเล่น 30 วินาที อาบน้ำ นอน ยารักษา
-- **ร้านมอจิ** 31 ตัว ซื้อด้วยลูกอม
-- **ตารางอันดับสด** (เปิดได้เมื่อเชื่อม Firebase ดูด้านล่าง)
-- ข้อมูลบันทึกในเครื่องอัตโนมัติ
+## Features
 
-ยังไม่มีในเวอร์ชันนี้ (มาในเวอร์ชันถัดไป): โฆษณา, ทีม, เควส, มอจิลับ, Mochi lab, การแจ้งเตือน และการนับก้าวตอนปิดแอพ
+- **Pop the mochi.** Every tap squishes it with a sound and a real haptic buzz. Fast taps build combos, and ×50 triggers Rage mode. Multi-finger tapping works.
+- **Name your mochi.** You name it the first time you open the app, and can rename it any time (tap ✏️).
+- **It grows up.** Baby 🌱 → Kid 🌿 → Teen 🌸 → Adult 🍡 → Grand 👑, earning XP from popping, feeding, walking and petting.
+- **Auras.** Six tiers based on total pops, from Soft Glow 💗 to Cosmic 🪐. They shine brightest on days you pop a lot.
+- **Candy 🍬.** Earned from popping, candy chests at pop milestones, walks and petting.
+- **Pet care.** Meals and energy drinks, real walks using the phone's step counter, 30-second strolls, baths, sleep and medicine.
+- **Mochi shop.** 31 characters to buy with candy, including Mafia Mochi, Ghost Mochi, Durian Mochi and Mochi Tower.
+- **Live leaderboard.** Works once you connect a free Firebase project (see below).
+- Progress is saved on the device automatically.
 
----
+Coming in later versions: ads (no pop-ups), teams, quests, hidden mochi, the Mochi lab, notifications and background step counting.
 
-## วิธีเปิดแอพบนมือถือของคุณ (ประมาณ 10 นาที)
+## Run it on your phone
 
-### 1. ติดตั้ง Node.js บน Mac
-ไปที่ https://nodejs.org ดาวน์โหลดเวอร์ชัน **LTS** แล้วติดตั้งตามปกติ
+You need a Mac or PC with [Node.js](https://nodejs.org) (LTS version) and the free **Expo Go** app on your phone (App Store or Google Play).
 
-### 2. ติดตั้ง Expo Go บนมือถือ
-ค้นหา **Expo Go** ใน App Store (หรือ Play Store) แล้วติดตั้ง ฟรี
+```bash
+git clone https://github.com/SittanBon/mochi-pop.git
+cd mochi-pop
+npm install
+npx expo start
+```
 
-### 3. เปิดโปรเจกต์
-1. แตกไฟล์ zip ไว้ที่ไหนก็ได้ เช่น Desktop
-2. เปิดแอพ **Terminal** บน Mac (กด ⌘ + Space พิมพ์ Terminal)
-3. พิมพ์ `cd ` (มีเว้นวรรค) แล้วลากโฟลเดอร์ `mochi-pop` ใส่หน้าต่าง Terminal แล้วกด Enter
-4. พิมพ์คำสั่งนี้แล้วกด Enter (รอสักครู่ ครั้งแรกจะดาวน์โหลดของประมาณ 1–3 นาที):
-   ```
-   npm install
-   ```
-5. จากนั้นพิมพ์:
-   ```
-   npx expo start
-   ```
-6. จะมี **QR code** ขึ้นใน Terminal เปิด **กล้อง iPhone** สแกน QR นั้น แอพจะเปิดใน Expo Go
+A QR code appears in the terminal. Scan it with your iPhone camera (or from inside Expo Go on Android) and the app opens.
 
-> Mac กับมือถือต้องต่อ **Wi-Fi เดียวกัน** ถ้าสแกนแล้วไม่ขึ้น ให้กด Ctrl + C แล้วลองใช้ `npx expo start --tunnel`
+Your computer and phone need to be on the same Wi-Fi. If the QR code doesn't connect, stop the server with Ctrl + C and run `npx expo start --tunnel` instead.
 
-แก้โค้ดแล้วแอพในมือถืออัปเดตเองทันที ถ้าจะปิด กด Ctrl + C ใน Terminal
+Changes to the code show up on your phone instantly.
 
----
+## Turn on the live leaderboard (optional)
 
-## เปิดตารางอันดับสด (ไม่บังคับ)
+The app works fully without this; only the Ranks tab stays off.
 
-แอพใช้งานได้ครบโดยไม่ต้องทำขั้นนี้ แค่แท็บ Ranks จะยังปิดอยู่
+1. Go to the [Firebase console](https://console.firebase.google.com) and create a project (free).
+2. In the project, click the **</>** (Web) icon to add a web app. Any name works.
+3. Firebase shows a `firebaseConfig = { apiKey: ..., projectId: ..., ... }` block. Copy those values into `src/firebaseConfig.js`.
+4. In the left menu, open **Build → Firestore Database → Create database** and pick a region near you.
+5. Open the **Rules** tab, replace everything with the contents of `firestore.rules` from this project, and click **Publish**.
+6. Restart the app. Friends running the same app will see each other on the board.
 
-1. ไปที่ https://console.firebase.google.com แล้วกด **Create a project** (ฟรี)
-2. ในโปรเจกต์ กดไอคอน **</>** (Web) เพื่อเพิ่มเว็บแอพ ตั้งชื่ออะไรก็ได้
-3. Firebase จะแสดงโค้ด `firebaseConfig = { apiKey: ..., projectId: ..., ... }`
-   คัดลอกค่าทั้งหมดไปวางแทนใน `src/firebaseConfig.js`
-4. เมนูซ้าย **Build → Firestore Database → Create database** เลือกเซิร์ฟเวอร์ใกล้คุณ (เช่น asia-southeast1)
-5. ไปแท็บ **Rules** ลบของเดิม แล้ววางเนื้อหาจากไฟล์ `firestore.rules` ในโปรเจกต์นี้ กด **Publish**
-6. เปิดแอพใหม่ ตารางอันดับจะทำงาน เพื่อนที่เปิดแอพเดียวกันจะเห็นกันและกัน
+These rules are meant for testing with friends. Before a public store release, add sign-in so the board can't be faked.
 
-> กติกานี้เหมาะกับการทดสอบกับเพื่อน ก่อนขึ้นสโตร์จริงควรเพิ่มระบบล็อกอินเพื่อกันคนโกง (เวอร์ชันถัดไป)
+## Publish to the App Store and Google Play
 
----
-
-## ส่งขึ้น App Store / Play Store (ภายหลัง)
-
-1. สมัคร Apple Developer (US$99/ปี) และ Google Play Console (US$25 ครั้งเดียว)
-2. แก้ `ios.bundleIdentifier` และ `android.package` ใน `app.json` จาก `com.yourname.mochipop` เป็นชื่อของคุณ เช่น `com.b1studio.mochipop`
-3. สมัครบัญชี Expo ฟรีที่ https://expo.dev แล้วรัน:
-   ```
+1. Create an Apple Developer account (US$99 per year) and a Google Play Console account (US$25 one-time).
+2. In `app.json`, change `ios.bundleIdentifier` and `android.package` from `com.yourname.mochipop` to your own, for example `com.sittanbon.mochipop`.
+3. Create a free account at [expo.dev](https://expo.dev), then run:
+   ```bash
    npx eas-cli@latest build --platform ios
    npx eas-cli@latest submit --platform ios
    ```
-   EAS จะสร้างแอพบนคลาวด์ให้ ไม่ต้องใช้ Xcode
+   EAS builds the app in the cloud, so you don't need Xcode.
 
----
+## Project structure
 
-## ไฟล์สำคัญ
-
-| ไฟล์ | หน้าที่ |
+| File | What it does |
 |---|---|
-| `App.js` | ตัวแอพหลัก: บันทึกข้อมูล กติกาเกม แท็บ |
-| `src/game.js` | ตัวเลขทั้งหมด: อาหาร XP ลูกอม หีบ ความต้องการของมอจิ |
-| `src/mochi.js` | ภาพมอจิทุกตัว ชิ้นส่วน ราคาในร้าน และออร่า |
-| `src/screens/` | หน้าจอ Pop, Pet, Mochi, Ranks |
-| `src/firebaseConfig.js` | ตั้งค่าตารางอันดับ |
-| `assets/sounds/` | เสียงป๊อป |
+| `App.js` | Main app: saving, game rules, tabs |
+| `src/game.js` | All the numbers: food, XP, candy, chests, pet needs |
+| `src/mochi.js` | Every mochi drawing, part, shop price and aura |
+| `src/screens/` | The Pop, Pet, Mochi and Ranks screens |
+| `src/firebaseConfig.js` | Leaderboard settings |
+| `firestore.rules` | Security rules for the leaderboard database |
+| `assets/sounds/` | Pop sound effects |
 
-อยากปรับตัวเลข เช่น ราคาอาหารหรือความเร็วที่มอจิหิว ให้แก้ใน `src/game.js`
+To tune the game, such as food prices or how fast your mochi gets hungry, edit `src/game.js`.
+
+### The food formula
+
+Every food follows one rule, so no snack is a shortcut:
+
+- **Value** = Full × 1.0 + Fun × 1.2 + Energy × 1.5
+- **Price** = Value ÷ 5
+- **XP** = Value ÷ 3

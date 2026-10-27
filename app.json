@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Mochi Pop",
+    "slug": "mochi-pop",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FFE3EC",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourname.mochipop"
+    },
+    "android": {
+      "package": "com.yourname.mochipop",
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#FFE3EC",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-audio",
+      "expo-font",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Mochi Pop counts your steps so your mochi can walk with you."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "backgroundColor": "#FFE3EC"
+        }
+      ]
+    ]
+  }
+}

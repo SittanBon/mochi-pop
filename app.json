@@ -24,7 +24,11 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Mochi Pop",
+      "themeColor": "#FFE3EC",
+      "backgroundColor": "#FFE3EC",
+      "output": "single"
     },
     "plugins": [
       "expo-audio",
@@ -43,6 +47,9 @@
           "backgroundColor": "#FFE3EC"
         }
       ]
-    ]
+    ],
+    "experiments": {
+      "baseUrl": "/mochi-pop"
+    }
   }
 }

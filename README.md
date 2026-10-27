@@ -5,6 +5,8 @@ Pop the mochi, feel your phone buzz, and look after your own little mochi: feed 
 
 Built with [Expo](https://expo.dev) (React Native), so it runs on both iPhone and Android.
 
+**▶️ [Play it in your browser](https://sittanbon.github.io/mochi-pop/)** — no install needed. The browser version is a preview: vibration works only on Android, and walks use the 30-second stroll. For the full experience, run the app on your phone (below).
+
 ## Features
 
 - **Pop the mochi.** Every tap squishes it with a sound and a real haptic buzz. Fast taps build combos, and ×50 triggers Rage mode. Multi-finger tapping works.

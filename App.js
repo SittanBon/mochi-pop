@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { View, Text, Pressable, StyleSheet, AppState, ActivityIndicator } from 'react-native';
+import { View, Text, Pressable, StyleSheet, AppState, ActivityIndicator, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -114,7 +114,15 @@ function Game() {
     giftQ.current.push(item);
     setGift(g => g || giftQ.current.shift());
   };
-  const buzz = style => { Haptics.impactAsync(style).catch(() => {}); };
+  const buzz = style => {
+    if (Platform.OS === 'web') {
+      // Browsers have no haptics engine; Android browsers can still vibrate.
+      const ms = { light: 10, soft: 8, medium: 18, heavy: 28 }[style] || 12;
+      try { if (typeof navigator !== 'undefined' && navigator.vibrate) navigator.vibrate(ms); } catch (e) {}
+      return;
+    }
+    Haptics.impactAsync(style).catch(() => {});
+  };
 
   /* ---------- game actions ---------- */
   const A = useMemo(() => {

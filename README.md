@@ -7,6 +7,8 @@ Built with [Expo](https://expo.dev) (React Native), so it runs on both iPhone an
 
 **▶️ [Play it in your browser](https://sittanbon.github.io/mochi-pop/)** — no install needed. The browser version is a preview: vibration works only on Android, and walks use the 30-second stroll. For the full experience, run the app on your phone (below).
 
+**🧪 [Play the full prototype](https://sittanbon.github.io/mochi-pop/prototype/)** — the original design with every feature: quests, hidden mochi, the Mochi lab, teams and stats. It's a single HTML file in [`prototype/`](prototype/), kept as the reference for porting features into the app. Outside of Claude it runs single-player; the live leaderboard and teams need Claude's built-in database.
+
 ## Features
 
 - **Pop the mochi.** Every tap squishes it with a sound and a real haptic buzz. Fast taps build combos, and ×50 triggers Rage mode. Multi-finger tapping works.
@@ -73,6 +75,7 @@ These rules are meant for testing with friends. Before a public store release, a
 | `src/firebaseConfig.js` | Leaderboard settings |
 | `firestore.rules` | Security rules for the leaderboard database |
 | `assets/sounds/` | Pop sound effects |
+| `prototype/index.html` | The full-feature HTML prototype (design reference) |
 
 To tune the game, such as food prices or how fast your mochi gets hungry, edit `src/game.js`.
 

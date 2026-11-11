@@ -29,6 +29,8 @@ jobs:
       - run: npx expo export --platform web
       # GitHub Pages serves a 404 page for unknown paths; reuse the app so refreshes still work.
       - run: cp dist/index.html dist/404.html
+      # The full-feature HTML prototype, playable at /mochi-pop/prototype/
+      - run: cp -r prototype dist/prototype
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
